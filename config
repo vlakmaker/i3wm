@@ -1,0 +1,66 @@
+color=#f3f4f5
+separator_block_width=15
+markup=none
+
+# Spotify icon \uF1BC
+#[spotify]
+#command=~/i3scripts/spotify.py
+#label=
+#color=#81b71a
+#interval=5
+
+# Guess the weather hourly
+[weather]
+label=
+command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+interval=3600
+color=#A4C2F4
+
+[time]
+command=echo -e " $(sh ~/i3scripts/date)"
+label=
+interval=1
+
+[battery]
+command=echo -e " $(sh ~/i3scripts/battery.sh)"
+color=#16af3f
+interval=5
+
+[audio]
+command=echo -e " $(sh ~/i3scripts/audio))"
+label=
+color=#990ea5
+interval=5
+
+[SSID]
+command=echo -e " $(sh ~/i3scripts/SSID.sh)"
+label=
+color=#7F00FF 
+interval=1
+
+[bluetooth]
+command=echo -e " $(sh ~/i3scripts/bluetooth)"
+label=
+color=#3b5998
+interval=1
+
+#[openvpn]
+#command=echo -e " $(sh ~/i3scripts/openvpn.sh)"
+#label=
+#interval=20
+#PID_FILE_FORMAT='/run/openvpn/*.pid'
+
+[temp]
+label=
+command=echo "$(sensors coretemp-isa-0000 | awk '/Physical/ {print $4}')"
+interval=10
+color=#b58900
+
+#[brightness]
+#command=echo -e " $(sh ~/i3scripts/bluetooth)"
+#label=
+#interval=5
+#
+
+
+
